@@ -1,14 +1,14 @@
-<h1>編集</h1>
+<h3>編集フォーム</h3>
 
 <%= form_for @project do |f| %>
 <p>
-  <%= f.label :title %><br>
+  <%= f.label :内容を編集して送信 %><br>
   <%= f.text_field :title %>
   <% if @project.errors.any? %>
   <%= @project.errors.messages[:title][0] %>
   <% end %>
 </p>
 <p>
-  <%= f.submit %>
+  <%= f.submit "送信する", class: "btn btn-default" %>
 
 <% end %>
