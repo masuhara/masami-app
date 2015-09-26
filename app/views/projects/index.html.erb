@@ -1,13 +1,27 @@
-<h3>長澤まさみさんへメッセージを送る</h3>
+<%# <h3>長澤まさみさんへメッセージを送る</h3> %>
 <ul class="list-group">
+  <% @projects = Project.all.order(:created_at).reverse_order %>
   <% @projects.each do |project| %>
-  <li class="list-group-item">
-    <%= link_to project.title, project_path(project.id) %>
-    <%= link_to "編集", edit_project_path(project.id), class: "btn btn-default" %>
-    <%= link_to "削除", project_path(project.id), method: :delete, data: {
-      confirm: "本当に削除しますか?" }, class: "btn btn-default" %>
-  </li>
+  <p class='marquee'>
+      <%= link_to project.title, project_path(project.id), :style=>"color:white;" %>
+      <%= link_to "編集", edit_project_path(project.id), :style=>"color:white;" %>
+      <%= link_to "削除", project_path(project.id), method: :delete, data: {
+      confirm: "本当に削除しますか?" }, :style=>"color:white;" %>
+  </p>
   <% end %>
 </ul>
 
-<p><%= link_to "投稿する", new_project_path, class: "btn btn-default" %></p>
+<script src="//code.jquery.com/jquery-git2.min.js"></script>
+<script type="text/javascript">
+  function getRandomArbitary(min, max) {
+    return Math.random() * (max - min) + min;
+  }
+
+  $(".marquee").each(function(){
+    $(this).css("animation-duration", ""+ getRandomArbitary(3, 20) + "s");
+  });
+</script>
+
+
+
+<%# link_to "投稿する", new_project_path, class: "btn btn-default" %>

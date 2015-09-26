@@ -17,3 +17,92 @@
 
  //= require_tree .
  //= require_self
+
+ body {
+   //background-color: #eee;
+   // background-image: url("masami.jpeg")
+   // 背景画像を全画面表示
+   background: url("masami03.jpeg") no-repeat center center fixed;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+ }
+
+p {
+  font-size: 2.0em;
+}
+
+p.marquee{
+     -webkit-animation-name: marqueeAnimation;
+     -webkit-animation-timing-function: linear;
+     -webkit-animation-duration:15s;
+     -webkit-animation-iteration-count: infinite;
+
+     -moz-animation-name: marqueeAnimation;
+     -moz-animation-timing-function: linear;
+     -moz-animation-duration:15s;
+     -moz-animation-iteration-count: infinite;
+
+     -ms-animation-name: marqueeAnimation;
+     -ms-animation-timing-function: linear;
+     -ms-animation-duration:15s;
+     -ms-animation-iteration-count: infinite;
+
+     -o-animation-name: marqueeAnimation;
+     -o-animation-timing-function: linear;
+     -o-animation-duration:15s;
+     -o-animation-iteration-count: infinite;
+
+     animation-name: marqueeAnimation;
+     animation-timing-function: linear;
+     animation-duration:15s;
+     animation-iteration-count: infinite;
+
+     margin: 0;
+     padding: 0;
+     overflow: hidden;
+     display: block;
+     white-space: nowrap;
+ }
+
+ @-webkit-keyframes marqueeAnimation{
+     0%{
+         text-indent: 120%;
+ }
+     100%{
+         text-indent: -50%;
+     }
+ }
+ @-ms-keyframes marqueeAnimation{
+     0%{
+         text-indent: 120%;
+ }
+     100%{
+         text-indent: -50%;
+     }
+ }
+ @-moz-keyframes marqueeAnimation{
+     0%{
+         text-indent: 120%;
+ }
+     100%{
+         text-indent: -50%;
+     }
+ }
+ @-o-keyframes marqueeAnimation{
+     0%{
+         text-indent: 120%;
+ }
+     100%{
+         text-indent: -50%;
+     }
+ }
+ @keyframes marqueeAnimation{
+     0%{
+         text-indent: 120%;
+ }
+     100%{
+         text-indent: -50%;
+     }
+ }

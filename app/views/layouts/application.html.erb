@@ -1,15 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>masami.herokuapp.com</title>
+  <title>長澤まさみメッセンジャー</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body class="text-center">
 
+<body>
+  <nav class="navbar navbar-inverse">
+      <form class="navbar-form navbar-left">
+        <font color=white>長澤まさみメッセンジャー　</font>
+        <%# <%= link_to "Home", projects_path, class:"btn btn-info" %>
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="コメントを書いてね">
+        </div>
+        <%= link_to "投稿する", new_project_path, class: "btn btn-info" %>
+      </form>
+  </nav>
+<%# <body class="text-center">
 <%= image_tag "masami.jpeg", class:"img-circle" %>
+
 <%= yield %>
-<%= link_to "Home", projects_path, class:"btn btn-info" %>
 </body>
 </html>
